@@ -1,5 +1,5 @@
-name := """f"""
-organization := "com.example"
+name := "fraud-detect"
+organization := "io.github.renanrfranca"
 
 version := "1.0-SNAPSHOT"
 
