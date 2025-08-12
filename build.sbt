@@ -3,9 +3,13 @@ organization := "io.github.renanrfranca"
 
 version := "1.0-SNAPSHOT"
 
-lazy val root = (project in file(".")).enablePlugins(PlayScala)
+lazy val root = (project in file("."))
+  .enablePlugins(PlayScala)
+  .settings(scalacOptions += "-Wunused:imports")
 
-scalaVersion := "2.13.16"
+scalaVersion := "3.3.4"
+semanticdbEnabled := true // enable SemanticDB
+semanticdbVersion := scalafixSemanticdb.revision
 
 libraryDependencies += guice
 libraryDependencies += "org.scalatestplus.play" %% "scalatestplus-play" % "7.0.2" % Test
