@@ -1,8 +1,11 @@
+import common.Money
+import common.Country
+
 final case class Transaction(
     id: String,
     userId: String,
-    amount: BigDecimal,
+    amount: Money,
     merchantId: String,
-    countryCode: String,
+    countryCode: Country,
     timestamp: Long // epoch
 )
