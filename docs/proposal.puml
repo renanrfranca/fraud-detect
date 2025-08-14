@@ -1,0 +1,28 @@
+@startuml proposal
+
+[Mock Transaction Producer] as Producer
+[Kafka] as Kafka
+[fraud-detect service] as FraudService
+[MongoDB] as Mongo
+[Redis] as Redis
+[Prometheus + Grafana] as Monitoring
+
+Producer --> Kafka : Publish transactions (JSON)
+Kafka --> FraudService : Consume transactions
+FraudService --> Kafka : Produce alerts
+FraudService --> Mongo : Store transactions/alerts
+FraudService <--> Redis : Cache data for fast lookups
+Mongo --> FraudService : Access uncached data 
+Monitoring <-- FraudService : Scrape metrics
+Monitoring <-- Kafka : Scrape metrics
+
+note top of Producer
+Still looking for an
+appropriate solution
+end note
+
+note top of Kafka
+Topics: transactions, fraud-alerts
+end note
+
+@enduml
