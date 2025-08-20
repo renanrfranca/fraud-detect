@@ -1,5 +1,7 @@
-import common.Money
-import common.Country
+package models
+
+import common.{*, given}
+import play.api.libs.json.{Format, Json}
 
 final case class Transaction(
     id: String,
@@ -9,3 +11,7 @@ final case class Transaction(
     countryCode: Country,
     timestamp: Long // epoch
 )
+
+object Transaction {
+  given Format[Transaction] = Json.format[Transaction]
+}
