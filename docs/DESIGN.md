@@ -34,7 +34,7 @@ This is a portifolio-focused project with the goal of honing and displaying skil
 
 ## Fraud detection rules:
 
-Deep ddiving into machine learning and advanced fraud detection techniques is beyond my ambitions for this project, therefore we're going with a few simple rules. The following scenarios will trigger a fraud alert:
+Deep diving into machine learning and advanced fraud detection techniques is beyond my ambitions for this project, therefore we're going with a few simple rules. The following scenarios will trigger a fraud alert:
 
 - ### High ammount 
     - Transaction ammount > 100000 USD
