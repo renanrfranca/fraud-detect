@@ -7,8 +7,8 @@ lazy val root = (project in file("."))
   .enablePlugins(PlayScala)
   .settings(scalacOptions += "-Wunused:imports")
 
-scalaVersion := "3.3.4"
-semanticdbEnabled := true // enable SemanticDB
+scalaVersion := "3.7.2"
+semanticdbEnabled := true
 semanticdbVersion := scalafixSemanticdb.revision
 
 val PekkoVersion = "1.1.5"
@@ -22,10 +22,5 @@ libraryDependencies ++= Seq(
   "org.apache.pekko" %% "pekko-actor-typed" % PekkoVersion,
   "org.apache.pekko" %% "pekko-serialization-jackson" % PekkoVersion,
   "org.apache.pekko" %% "pekko-slf4j" % PekkoVersion,
+  "ch.qos.logback" % "logback-classic" % "1.5.18"
 )
-
-// Adds additional packages into Twirl
-//TwirlKeys.templateImports += "com.example.controllers._"
-
-// Adds additional packages into conf/routes
-// play.sbt.routes.RoutesKeys.routesImport += "com.example.binders._"
