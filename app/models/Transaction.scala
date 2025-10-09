@@ -4,7 +4,7 @@ import common.{*, given}
 import play.api.libs.json.{Format, Json}
 
 final case class Transaction(
-    id: String,
+    _id: String,
     userId: String,
     amount: Money,
     merchantId: String,

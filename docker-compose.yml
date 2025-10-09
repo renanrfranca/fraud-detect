@@ -25,6 +25,8 @@ services:
     container_name: mongodb
     environment:
       MONGO_INITDB_DATABASE: frauddb
+    ports:
+      - "27017:27017"
     networks:
       - kafka-network
     volumes:

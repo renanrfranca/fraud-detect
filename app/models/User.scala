@@ -4,7 +4,7 @@ import common.{*, given}
 import play.api.libs.json.{Format, Json}
 
 final case class User(
-    id: String,
+    _id: String,
     usualLocation: Country
 )
 
